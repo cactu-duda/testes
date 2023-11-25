@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows 98 Taskbar</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #taskbar {
+      background-color: #008080;
+      height: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .start-button, .taskbar-item {
+      cursor: pointer;
+      padding: 5px;
+      margin-right: 5px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .start-button:hover, .taskbar-item:hover {
+      background-color: #fff;
+      color: #000;
+    }
+
+    #start-menu {
+      display: none;
+      position: fixed;
+      bottom: 40px;
+      left: 0;
+      width: 200px;
+      background-color: #008080;
+      padding: 10px;
+    }
+
+    .start-menu-item {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .start-menu-item:hover {
+      background-color: #fff;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="taskbar">
+    <div class="start-button" onclick="toggleStartMenu()">Start</div>
+    <div class="taskbar-item" onclick="alert('My Computer')">My Computer</div>
+    <div class="taskbar-item" onclick="alert('Internet Explorer')">Internet Explorer</div>
+    <!-- Add more taskbar items as needed -->
+  </div>
+
+  <div id="start-menu">
+    <a href="#" class="start-menu-item" onclick="alert('Programs')">Programs</a>
+    <a href="#" class="start-menu-item" onclick="alert('Documents')">Documents</a>
+    <a href="#" class="start-menu-item" onclick="alert('Settings')">Settings</a>
+  </div>
+
+  <script>
+    function toggleStartMenu() {
+      var startMenu = document.getElementById('start-menu');
+      startMenu.style.display = (startMenu.style.display === 'none' || startMenu.style.display === '') ? 'block' : 'none';
+    }
+  </script>
+
+</body>
+</html>
